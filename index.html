@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NullSpecter | Red Team Operator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Fira+Code&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Fira Code', monospace;
+      color: #f1f1f1;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .preloader {
+      background-color: #000;
+      color: #0f0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    header {
+      background: linear-gradient(135deg, #1e1e2f, #121212);
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      color: #a855f7;
+      z-index: 1;
+      position: relative;
+    }
+    .typewriter {
+      font-style: italic;
+      color: #ccc;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    .terminal {
+      background: #111;
+      color: #39ff14;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      box-shadow: 0 0 15px #0f0;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2.section-title {
+      font-family: 'Orbitron', sans-serif;
+      color: #a855f7;
+      font-size: 2rem;
+      border-bottom: 2px solid #a855f7;
+      margin-bottom: 1.5rem;
+    }
+    .arsenal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .arsenal-table th, .arsenal-table td {
+      border: 1px solid #333;
+      padding: 1rem;
+      background-color: #1a1a1a;
+    }
+    .arsenal-table th {
+      background-color: #2a2a2a;
+      color: #a855f7;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #a855f7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    #background-audio {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #333;
+      padding: 0.5rem;
+      border-radius: 5px;
+      z-index: 999;
+    }
+    .log-box {
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 5px;
+      color: #0f0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+      box-shadow: 0 0 10px #0f0a;
+    }
+  </style>
+</head>
+<body>
+  <div class="preloader" id="preloader">Initializing NullSpecter Environment...</div>  <header>
+    <h1>👾 NullSpecter 👾</h1>
+    <p class="typewriter"><span id="typed"></span></p>
+  </header>  <section>
+    <h2 class="section-title">🧠 About Me</h2>
+    <div class="terminal">
+      🕶️ n0specter — Red Teamer. Exploit Dev. Reverse Engineer. Bug Bounty Hunter.<br>
+      Operating below the radar with precision-crafted payloads, deep recon, and zero-noise exfiltration.
+    </div>
+  </section>  <section>
+    <h2 class="section-title">⚔️ Arsenal</h2>
+    <table class="arsenal-table">
+      <tr><th>Category</th><th>Tools</th></tr>
+      <tr><td>🔍 Recon</td><td>amass, subfinder, httpx, nmap, ffuf</td></tr>
+      <tr><td>💥 Exploitation</td><td>Burp Suite, sqlmap, XSStrike</td></tr>
+      <tr><td>🧠 Reversing</td><td>Ghidra, IDA Pro, Radare2, Objection</td></tr>
+      <tr><td>🎯 Post-Exploitation</td><td>Sliver, Empire, Mimikatz, BloodHound</td></tr>
+      <tr><td>🛠 Scripting</td><td>Python, Bash, PowerShell</td></tr>
+    </table>
+  </section>  <section>
+    <h2 class="section-title">🔬 Personal Labs & Tools</h2>
+    <ul>
+      <li>🧭 <strong>specterRecon</strong>: silent recon automation (coming soon)</li>
+      <li>💣 <strong>brutekill</strong>: adaptive brute force engine with delay analysis</li>
+      <li>🕳 <strong>ghostPayload</strong>: evasion-ready reverse shell framework (coming soon)</li>
+    </ul>
+  </section>  <section>
+    <h2 class="section-title">📄 Exploit Log Viewer</h2>
+    <div class="log-box">
+      [*] Starting recon module...<br>
+      [+] Subdomains found: 37<br>
+      [+] SQL injection point detected at /login.php<br>
+      [!] Exploit sent. Shell opened on target 192.168.1.22:4444<br>
+      [+] Credentials dumped: admin:NullSpecter1337<br>
+    </div>
+  </section>  <section class="contact">
+    <h2 class="section-title">📡 Contact</h2>
+    <p>Email: <a href="mailto:nullspectr@proton.me">nullspectr@proton.me</a></p>
+    <p>GitHub: <a href="https://github.com/n0specter" target="_blank">github.com/n0specter</a></p>
+  </section>  <footer>
+    <p>⚠️ Hack Responsibly • Operate quietly. Document loudly. Hack ethically.</p>
+  </footer>  <div id="background-audio">
+    🔊 Background Audio: <button onclick="toggleAudio()">Play / Pause</button>
+  </div>  <audio id="hacker-audio" loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Kai_Engel/Chapter_One_Kai_Engel/01_Comatose_Kai_Engel.mp3" type="audio/mpeg">
+  </audio>  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("preloader").style.display = "none";
+    });
+
+    var typed = new Typed('#typed', {
+      strings: [
+        'I operate in silence...',
+        'You won’t see me...',
+        'But you’ll feel the breach.'
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+
+    function toggleAudio() {
+      const audio = document.getElementById('hacker-audio');
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script></body>
+</html>
